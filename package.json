@@ -11,5 +11,9 @@
   "devDependencies": {
     "beefy": "~0.4.5",
     "browserify": "~2.35.1"
+  },
+  "dependencies": {
+    "superagent": "~0.15.7",
+    "csv": "~0.3.6"
   }
 }
