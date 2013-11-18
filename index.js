@@ -19,16 +19,19 @@ fetch(url, function(err, rawData) {
   
   var movies = transform(rawData)
 
-  show(movies)
+  // show(movies)
 })
 
 // // // // // // // // // // // // 
 
-// Helper
-function show (data) {
-  textarea = document.createElement('textarea')
-  textarea.style.width = window.innerWidth + 'px'
-  textarea.style.height = window.innerHeight + 'px'
-  textarea.value = JSON.stringify(data, null, 2)
-  document.body.appendChild(textarea)
-}
+// function makeVisElement () {
+//   var el = document.createElement('div')
+//   el.style.position = 'absolute'
+//   el.style.left = 0
+//   el.style.top = 0
+//   el.style.width = window.innerWidth + 'px'
+//   el.style.height = window.innerHeight + 'px'
+//   el.style.background = '#eee'
+//   document.body.appendChild(el)
+//   return el
+// }
