@@ -14,6 +14,7 @@ var url = 'https://docs.google.com:443/spreadsheet/pub'
 var fetch = require('./fetch.js')
 var transform = require('./transform.js')
 var display = require('./display.js')
+var interact = require('./interact.js')
 
 fetch(url, function(err, rawData) {
   if (err) {alert(err.message)}
@@ -23,21 +24,24 @@ fetch(url, function(err, rawData) {
   var visEl = makeVisElement()
   display(visEl, movies, 'qualityPerDollar')
   
+  var infoEl = makeInfoElement()
+  interact(infoEl, visEl, movies)
+  
 })
 
 // // // // // // // // // // // // 
 
-// function makeInfoElement () {
-//   var el = document.createElement('div')
-//   el.style.position = 'absolute'
-//   el.style.right = 0
-//   el.style.top = 0
-//   el.style.width = 300 + 'px'
-//   el.style.height = window.innerHeight + 'px'
-//   el.style.background = 'rgba(255,255,255,0.5)'
-//   document.body.appendChild(el)
-//   return el
-// }
+function makeInfoElement () {
+  var el = document.createElement('div')
+  el.style.position = 'absolute'
+  el.style.right = 0
+  el.style.top = 0
+  el.style.width = 300 + 'px'
+  el.style.height = window.innerHeight + 'px'
+  el.style.background = 'rgba(255,255,255,0.5)'
+  document.body.appendChild(el)
+  return el
+}
 
 function makeVisElement () {
   var el = document.createElement('div')
