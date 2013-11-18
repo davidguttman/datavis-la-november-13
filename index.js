@@ -11,13 +11,21 @@ var url = 'https://docs.google.com:443/spreadsheet/pub'
 // 4. Interact
 // 5. Publish
 
+var fetch = require('./fetch.js')
+
+fetch(url, function(err, rawData) {
+  if (err) {alert(err.message)}
+  
+  show(rawData)
+})
+
 // // // // // // // // // // // // 
 
 // Helper
-// function show (data) {
-//   textarea = document.createElement('textarea')
-//   textarea.style.width = window.innerWidth + 'px'
-//   textarea.style.height = window.innerHeight + 'px'
-//   textarea.value = JSON.stringify(data, null, 2)
-//   document.body.appendChild(textarea)
-// }
+function show (data) {
+  textarea = document.createElement('textarea')
+  textarea.style.width = window.innerWidth + 'px'
+  textarea.style.height = window.innerHeight + 'px'
+  textarea.value = JSON.stringify(data, null, 2)
+  document.body.appendChild(textarea)
+}
