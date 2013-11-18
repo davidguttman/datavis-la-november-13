@@ -12,11 +12,14 @@ var url = 'https://docs.google.com:443/spreadsheet/pub'
 // 5. Publish
 
 var fetch = require('./fetch.js')
+var transform = require('./transform.js')
 
 fetch(url, function(err, rawData) {
   if (err) {alert(err.message)}
   
-  show(rawData)
+  var movies = transform(rawData)
+
+  show(movies)
 })
 
 // // // // // // // // // // // // 
