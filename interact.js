@@ -1,6 +1,6 @@
 module.exports = function(el, visEl, movies) {
   visEl.addEventListener('mouseover', function(evt) {
-    var movieEl = evt.toElement
+    var movieEl = evt.toElement || evt.relatedTarget
     var title = movieEl.dataset.title
     if (!movieEl || !title) return
     
