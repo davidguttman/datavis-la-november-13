@@ -1,5 +1,4 @@
-module.exports = function (rawData) {
-  var movies = toJSON(rawData)
+module.exports = function (movies) {
   addCalcuations(movies)
   return movies
 }
@@ -18,15 +17,4 @@ function convertNumbers (movie) {
 
   numProps.forEach(function(prop) { movie[prop] = parseFloat(movie[prop]) })
   return movie
-}
-
-function toJSON (rows) {
-  var colNames = rows.shift()
-  return jsonRows = rows.map(function(values) {
-    var row = {}
-    values.forEach(function(val, i) {
-      row[colNames[i]] = val
-    })
-    return row
-  })
 }

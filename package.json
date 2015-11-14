@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "beefy index.js"
   },
   "author": "",
   "license": "BSD",
@@ -13,7 +13,8 @@
     "browserify": "~2.35.1"
   },
   "dependencies": {
+    "csv": "~0.3.6",
     "superagent": "~0.15.7",
-    "csv": "~0.3.6"
+    "tabletop": "^1.4.2"
   }
 }
